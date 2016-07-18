@@ -1,14 +1,18 @@
 # kinterpreter
 
-A Clojure library designed to ... well, that part is up to you.
+A Clojure based interpreter for the esolang (Kipple)[https://esolangs.org/wiki/Kipple].
+
+### Aside
+
+This is the first time I have _ever_ made something like an interpreter.  The commits you see will be like snapshots for my learning process.
+I understand that Kipple is a fairly simple, stack based, esolang but one has to start somewhere. `:)`
 
 ## Usage
 
-FIXME
+Use `java -jar kips.jar [path-to-file].k`
 
 ## License
 
-Copyright © 2016 FIXME
+Copyright © 2016 Jeel Shah
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+MIT License
