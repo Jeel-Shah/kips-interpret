@@ -1,6 +1,6 @@
 # kinterpreter
 
-A Clojure based interpreter for the esolang (Kipple)[https://esolangs.org/wiki/Kipple].
+A Clojure based interpreter for the esolang [Kipple](https://esolangs.org/wiki/Kipple).
 
 ### Aside
 
