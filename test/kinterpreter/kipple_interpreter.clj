@@ -21,7 +21,6 @@
 
 ;; We need a parser and a scanner and then a tokenizer
 
-
 (defn recieve-code [path]
   "Reads the file based on the given path and returns a string."
   (slurp path))
