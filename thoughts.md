@@ -61,6 +61,25 @@ the file in as a string.
 
 My thoughts are to split the file from newline characters and then scan the file line by line and look for operands. 
 
+**Regular Expressions!!!!** I can use regular expressions to -parse- scan the data ... The regular expression has to look for <>?+- and ignore 
+the rest. 
+
+### Regular Expressions
+There are some cases where regular expressions will work beautiful. Take for example the following: 
+
+`/\(.+?\s*)/g` and `[a-z]?[0-9]*>[a-z]?<[a-z]?[0-9]+`
+
+but it has a number of drawbacks. For example, the first regex will capture anything in brackets and the second one fails for
+minor syntactical errors like `a1>a<34`.
+
+Once we have gotten that information then we can remove things that don't make sense. For example, aa or +a or 2+aa
+
 ### Some (obvious) Rules
 1. If the line starts with `#` then ignore the line
-2. 
+2. If the line contains no operands then ignore that line
+    - How can one test for that?
+    
+## More thoughts
+
+Operations need to be conducted recursively; it would nice to read data as a tree
+and then apply interpret the data through the tree.

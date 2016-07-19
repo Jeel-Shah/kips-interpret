@@ -37,13 +37,30 @@
   (cons value stack))
 
 (defn pop-stack [stack]
-  (pop stack))
+  (if (empty? stack)
+    "Exception: Can't pop empty stack"
+    {:first (first stack) :stack (pop stack)}))
 
-(defn clear? [stack]
-  (if (zero? (first stack))
-    []
-    stack))
+(defn clear [stack]
+  (cond
+    (empty? stack) stack
+    (zero? (first stack)) []
+    :else stack)
+  )
 
+(defn add [stack val2]
+  (cond
+    (empty? stack) (onto-stack stack val2)
+    (vector? val2) (onto-stack stack (+ (first stack) (:first (pop-stack val2))))
+    :else (onto-stack stack (+ (first stack) val2)))
+  )
+
+(defn subtract [stack val2]
+  (cond
+    (empty? stack) (onto-stack stack val2)
+    (vector? val2) (onto-stack stack (- (first stack) (:first (pop-stack val2))))
+    :else (onto-stack stack (- (first stack) val2)))
+  )
 
 (prn (recieve-code "C:\\Users\\Neel\\Desktop\\kipple1.01\\samples\\test.k"))
 
