@@ -61,7 +61,7 @@ the file in as a string.
 
 My thoughts are to split the file from newline characters and then scan the file line by line and look for operands. 
 
-**Regular Expressions!!!!** I can use regular expressions to -parse- scan the data ... The regular expression has to look for <>?+- and ignore 
+**Regular Expressions!!!!** I can use regular expressions to ~~parse~~ scan the data ... The regular expression has to look for <>?+- and ignore 
 the rest. 
 
 ### Regular Expressions

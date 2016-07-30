@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ReplState" timestamp="1468970598597">{:repl-history {:ide [], :local [], :remote []}}</component>
+  <component name="ReplState" timestamp="1469150605394">{:repl-history {:ide [], :local [&quot;(vector? [1 2 3])&quot; &quot;(empty? [])&quot; &quot;(pop [])&quot; &quot;(+ (first [1 2 3 4]) 4)&quot; &quot;(vector? 1)&quot; &quot;(cons 2 [1 2 3 4])&quot; &quot;(cons 1 [])&quot; &quot;(cons 2 [1])&quot; &quot;(+ 2 2)&quot; &quot;(first [1 2 3 4])&quot; &quot;(pop [1 2 3])&quot; &quot;(def paren-match #\&quot;hello, (.*)\&quot;)&quot; &quot;(re-matches paren-match \&quot;Hello, world\&quot;)&quot; &quot;(re-matches paren-match \&quot;hello, world\&quot;)&quot; &quot;(format \&quot;Exception %s\&quot; [1 2 3 4])&quot;], :remote []}}</component>
 </project>

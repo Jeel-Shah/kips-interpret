@@ -20,47 +20,53 @@
 ;; {:a [values] :b ...} ?
 
 ;; We need a parser and a scanner and then a tokenizer
+(def paren-match #"\((.+?\s*)\)")
+(def block-match #"([a-z]?[0-9]*)?>[a-z]?<?([a-z]?[0-9]*)?")
 
 (defn recieve-code [path]
   "Reads the file based on the given path and returns a string."
   (slurp path))
 
+
 (defn convert-to-ascii [ascii-code]
   "Converts ascii to a string. Expects an int and returns a string"
   (str (char ascii-code)))
 
+
 (defn convert-to-decimal [decimal-code]
   "Expects a string and returns a collection "
   (map int decimal-code))
+
 
 (defn onto-stack [stack value]
   (cons value stack))
 
 (defn pop-stack [stack]
   (if (empty? stack)
-    "Exception: Can't pop empty stack"
+    (format "Exception: Can't pop empty stack: %s" stack)
     {:first (first stack) :stack (pop stack)}))
+
 
 (defn clear [stack]
   (cond
     (empty? stack) stack
     (zero? (first stack)) []
-    :else stack)
-  )
+    :else stack))
+
 
 (defn add [stack val2]
   (cond
     (empty? stack) (onto-stack stack val2)
     (vector? val2) (onto-stack stack (+ (first stack) (:first (pop-stack val2))))
-    :else (onto-stack stack (+ (first stack) val2)))
-  )
+    :else (onto-stack stack (+ (first stack) val2))))
+
 
 (defn subtract [stack val2]
   (cond
     (empty? stack) (onto-stack stack val2)
     (vector? val2) (onto-stack stack (- (first stack) (:first (pop-stack val2))))
-    :else (onto-stack stack (- (first stack) val2)))
-  )
+    :else (onto-stack stack (- (first stack) val2))))
 
-(prn (recieve-code "C:\\Users\\Neel\\Desktop\\kipple1.01\\samples\\test.k"))
+(def test-code (recieve-code "C:\\Users\\Neel\\Desktop\\kipple1.01\\samples\\test.k"))
 
+(prn (re-find block-match test-code))
